@@ -1,0 +1,13 @@
+.titlePane {
+  width: 100%;
+  text-align: center;
+  background: var(--color-accent-1);
+  color: white;
+  padding: 1.5em 1.8em;
+}
+
+.titlePane h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
