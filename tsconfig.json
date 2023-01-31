@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "strict": true
+  }
+}
