@@ -2,6 +2,7 @@
   "compilerOptions": {
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "strict": true
+    "strict": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }

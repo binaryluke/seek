@@ -1,0 +1,36 @@
+/* Site wide styles and resets */
+/* NOTE: Usually I would include some custom reset styles, but they will distract and bloat from the focus of this code test, so not including for this code test */
+/* NOTE: These days I prefer to start with css (modules) and then switch to a pre-processor like sass if and only if need more features, in large projects like Seek will usually require */
+
+:root {
+  /* Credit: Seek. Colors! (I just picked a few from the real seek site) */
+  --color-accent-1: #0D3880;
+  --color-accent-2: #0A2A60;
+  --color-accent-3: #2765CF;
+  --color-neutral-1: #F7F8FB;
+  --color-neutral-2: #F2F4F7;
+  --color-neutral-3: #E6ECF6;
+
+  /* Lacking inspiration right now, using classic goto Roboto */
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+body, #root {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+div, section {
+  box-sizing: border-box;
+}
+

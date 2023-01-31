@@ -12,10 +12,11 @@
     "build": "parcel build",
     "test": "jest",
     "check-style": "prettier --check .",
-    "check-types": "tsc src/index.tsx --jsx react-jsx --lib esnext --isolatedModules --strict --noEmit"
+    "check-types": "tsc --isolatedModules --noEmit"
   },
   "devDependencies": {
     "@jest/globals": "^29.4.1",
+    "@parcel/transformer-sass": "2.8.3",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -25,7 +26,8 @@
     "prettier": "2.8.3",
     "process": "^0.11.10",
     "ts-jest": "^29.0.5",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "typescript-plugin-css-modules": "^4.1.1"
   },
   "dependencies": {
     "react": "^18.2.0",

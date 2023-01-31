@@ -1,0 +1,47 @@
+.header {
+  background: white;
+  padding: 1.1em 1.4em;
+  box-sizing: border-box;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.header h1 > span {
+  font-weight: 400;
+}
+
+.main {
+  flex: 1;
+  background: var(--color-neutral-2);
+}
+
+.footer {
+  background: white;
+  padding: 1.1em 1.4em;
+  background: var(--color-neutral-1);
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.pageTitlePane {
+  width: 100%;
+  text-align: center;
+  background: var(--color-accent-1);
+  color: white;
+  padding: 1.5em 1.8em;
+}
+
+.pageTitlePane h2 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
