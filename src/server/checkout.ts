@@ -1,11 +1,11 @@
-import { PricingRuleSchema, ProductSchema } from "./database";
+import { PricingRuleSchema, ProductSchema } from "./mockDatabase";
 
 interface CartItem {
   product: ProductSchema;
   qty: number;
 }
 
-class CheckoutInstance {
+export class CheckoutInstance {
   pricingRules: PricingRuleSchema[];
   cartItems: CartItem[];
 
