@@ -1,10 +1,7 @@
 import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { App } from "./App";
-import { routes } from './routes';
+import { routes } from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +11,5 @@ const router = createBrowserRouter([
   },
 ]);
 const container = document.getElementById("root");
-const root = createRoot(container!)
+const root = createRoot(container!);
 root.render(<RouterProvider router={router} />);
-

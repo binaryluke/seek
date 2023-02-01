@@ -4,15 +4,15 @@
 
 :root {
   /* Credit: Seek. Colors! (I just picked a few from the real seek site) */
-  --color-accent-1: #0D3880;
-  --color-accent-2: #0A2A60;
-  --color-accent-3: #2765CF;
-  --color-neutral-1: #F7F8FB;
-  --color-neutral-2: #F2F4F7;
-  --color-neutral-3: #E6ECF6;
+  --color-accent-1: #0d3880;
+  --color-accent-2: #0a2a60;
+  --color-accent-3: #2765cf;
+  --color-neutral-1: #f7f8fb;
+  --color-neutral-2: #f2f4f7;
+  --color-neutral-3: #e6ecf6;
 
   /* Lacking inspiration right now, using classic goto Roboto */
-  --font-family: 'Roboto', sans-serif;
+  --font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -20,7 +20,8 @@ body {
   font-family: var(--font-family);
 }
 
-body, #root {
+body,
+#root {
   min-height: 100vh;
 }
 
@@ -30,7 +31,7 @@ body, #root {
   min-height: 100vh;
 }
 
-div, section {
+div,
+section {
   box-sizing: border-box;
 }
-
