@@ -1,6 +1,31 @@
 .CartItem {
-  background-color: var(--color-accent-2);
-  border-radius: 8px;
-  padding: 24px 16px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  /*padding: 24px 16px;*/
   color: var(--color-dark-text);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.CartItem header {
+  padding: 24px 16px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: var(--color-accent-2);
+}
+
+.content {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.data {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 24px;
+}
+
+.data p {
+  font-size: 18px;
+  font-weight: 700;
 }

@@ -1,0 +1,19 @@
+.qtyControl {
+  display: flex;
+}
+
+.qtyControl input {
+  padding: 8px 12px;
+  width: 60px;
+  height: 35px;
+  text-align: center;
+  border-radius: 0;
+  background: white;
+  border: 0;
+}
+
+.qtyControl .button {
+  width: 40px;
+  height: 35px;
+  padding: 8px 12px;
+}

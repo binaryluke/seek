@@ -1,4 +1,5 @@
 import * as classes from "./CartItem.module.css";
+import { QtyControl } from "./QtyControl";
 
 interface CartItemProps {
   title: string;
@@ -11,14 +12,18 @@ interface CartItemProps {
 
 export const CartItem = (props: CartItemProps) => {
   return (
-    <div className={classes.CartItem}>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-      <p data-testid="cartItemPrice">${props.price / 100}</p>
-      <p data-testid="cartItemQty">{props.qty}</p>
-      <button data-testid="cartItemIncreaseQtyBtn" onClick={props.incrementQty}>
-        +
-      </button>
-    </div>
+    <section className={classes.CartItem}>
+      <header>
+        <h2>{props.title}</h2>
+      </header>
+      <div className={classes.content}>
+        <p>{props.description}</p>
+      </div>
+      <div className={classes.data}>
+        <QtyControl qty={props.qty} incrementQty={props.incrementQty} />
+        <p data-testid="cartItemPrice">${props.price / 100}</p>
+      </div>
+      <div className={classes.actions}></div>
+    </section>
   );
 };
