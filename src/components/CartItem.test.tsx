@@ -19,10 +19,12 @@ describe("CartItem", () => {
     expect(component.getByTestId("cartItemPrice").textContent).toEqual(
       "$109.99"
     );
-    expect(component.getByTestId("cartItemQty").textContent).toEqual("0");
+    expect(component.getByTestId("cartItemQty").getAttribute("value")).toEqual(
+      "0"
+    );
   });
 
-  test("Shows the correct quantity", () => {
+  test("Shows the correct quantity", async () => {
     const component = render(
       <CartItem
         title="Test Title"
@@ -33,7 +35,9 @@ describe("CartItem", () => {
       />
     );
 
-    expect(component.getByTestId("cartItemQty").textContent).toEqual("8");
+    expect(component.getByTestId("cartItemQty").getAttribute("value")).toEqual(
+      "8"
+    );
   });
 
   test("Calls incrementQty at the correct time", () => {

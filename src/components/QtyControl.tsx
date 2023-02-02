@@ -8,8 +8,12 @@ interface QtyControlProps {
 
 export const QtyControl = (props: QtyControlProps) => (
   <div className={classes.qtyControl}>
-    <input disabled value={props.qty} />
-    <Button className={classes.button} onClick={props.incrementQty}>
+    <input data-testid="cartItemQty" disabled value={props.qty} />
+    <Button
+      data-testid="cartItemIncreaseQtyBtn"
+      className={classes.button}
+      onClick={props.incrementQty}
+    >
       +
     </Button>
   </div>
