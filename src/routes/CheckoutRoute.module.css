@@ -28,26 +28,3 @@
 .total span {
   font-weight: 700;
 }
-
-.purchaseBtn {
-  border: 0;
-  background: var(--color-accent-1);
-  padding: 20px 28px;
-  font-size: 20px;
-  color: white;
-}
-
-.purchaseBtn:hover {
-  cursor: pointer;
-}
-
-.purchaseBtn:disabled {
-  background: var(--color-greyscale-dark);
-  color: var(--color-greyscale-light);
-  cursor: not-allowed;
-}
-
-.purchaseBtn:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}

@@ -7,6 +7,7 @@ import {
 import { CartItem } from "../components/CartItem";
 import { useNavigate } from "react-router-dom";
 import * as classes from "./CheckoutRoute.module.css";
+import { Button } from "../components/Button";
 
 export const CheckoutRoute = () => {
   const cartProducts = useCartProducts();
@@ -36,13 +37,9 @@ export const CheckoutRoute = () => {
             ${totalPrice ? totalPrice / 100 : 0}
           </span>
         </p>
-        <button
-          className={classes.purchaseBtn}
-          disabled={!totalPrice}
-          onClick={() => navigate("/success")}
-        >
+        <Button disabled={!totalPrice} onClick={() => navigate("/success")}>
           Purchase
-        </button>
+        </Button>
       </div>
     </Page>
   );
