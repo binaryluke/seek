@@ -40,11 +40,13 @@ export const CartProvider = (props: PropsWithChildren<CartProvider>) => {
   };
   const addToCart = (productId: number) =>
     addToCartOnServer(props.customerId, productId).then(handleCartUpdate);
+
   useEffect(() => {
     setCartProducts([]);
     setTotalPrice(0);
     getCartFromServer(props.customerId).then(handleCartUpdate);
   }, [props.customerId]);
+
   const value = { totalPrice, cartProducts, addToCart };
   return (
     <CartContext.Provider value={value}>{props.children}</CartContext.Provider>

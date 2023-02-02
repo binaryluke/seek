@@ -28,6 +28,7 @@ export const getCart = async (customerId: number) => {
   const pricingRules = database.pricingRules.filter(
     (pricingRule) => pricingRule.customerId === customerId
   );
+  const checkout = customerCheckoutMap[customerId];
   const cartProducts: CartProduct[] = database.products.map((product) => {
     const fixedPricingRule = pricingRules.find(
       (pricingRule) =>
@@ -38,16 +39,15 @@ export const getCart = async (customerId: number) => {
     if (fixedPricingRule?.rule.name === "FixedPrice") {
       price = fixedPricingRule.rule.price;
     }
-
+    const qty = checkout?.qtyByProductId(product.id) || 0;
     return {
       productId: product.id,
       title: product.title,
       description: product.description,
       price,
-      qty: 0,
+      qty,
     };
   });
-  const checkout = customerCheckoutMap[customerId];
 
   return {
     cartProducts,

@@ -61,6 +61,13 @@ export class CheckoutInstance {
         .reduce((total, price) => total + price, 0)
     );
   }
+
+  qtyByProductId(productId: number) {
+    const cartItem = this.cartItems.find(
+      (cartItem) => cartItem.product.id === productId
+    );
+    return cartItem ? cartItem.qty : 0;
+  }
 }
 
 // Conform to pseudocode interface

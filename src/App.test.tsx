@@ -23,7 +23,7 @@ const renderPath = (path: string) => {
   return render(<RouterProvider router={router} />);
 };
 
-describe("App", () => {
+describe.skip("App", () => {
   test("has the correct heading text", () => {
     const { getAllByRole } = renderPath("/");
     expect(

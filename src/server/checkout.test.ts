@@ -54,6 +54,9 @@ describe("Pricing Rules", () => {
     co.add(CLASSIC_PRODUCT);
     co.add(PREMIUM_PRODUCT);
 
+    expect(co.qtyByProductId(CLASSIC_PRODUCT.id)).toBe(3);
+    expect(co.qtyByProductId(STANDOUT_PRODUCT.id)).toBe(0);
+    expect(co.qtyByProductId(PREMIUM_PRODUCT.id)).toBe(1);
     expect(co.total()).toBe(93497);
   });
 
@@ -74,6 +77,9 @@ describe("Pricing Rules", () => {
     co.add(STANDOUT_PRODUCT);
     co.add(PREMIUM_PRODUCT);
 
+    expect(co.qtyByProductId(CLASSIC_PRODUCT.id)).toBe(0);
+    expect(co.qtyByProductId(STANDOUT_PRODUCT.id)).toBe(3);
+    expect(co.qtyByProductId(PREMIUM_PRODUCT.id)).toBe(1);
     expect(co.total()).toBe(129496);
   });
 });
