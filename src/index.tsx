@@ -15,13 +15,18 @@ const WrappedApp = () => {
   );
 };
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <WrappedApp />,
+      children: routes,
+    },
+  ],
   {
-    path: "/",
-    element: <WrappedApp />,
-    children: routes,
-  },
-]);
+    basename: process.env.URI_BASENAME,
+  }
+);
 const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(<RouterProvider router={router} />);
