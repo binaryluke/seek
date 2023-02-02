@@ -8,6 +8,7 @@
 
 .btn:hover {
   cursor: pointer;
+  filter: brightness(85%);
 }
 
 .btn:disabled {
