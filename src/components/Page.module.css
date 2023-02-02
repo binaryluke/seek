@@ -1,12 +1,22 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .titlePane {
   width: 100%;
   text-align: center;
-  background: var(--color-accent-1);
+  background: var(--color-accent-4);
   color: white;
-  padding: 1.5em 1.8em;
+  padding: 24px 28px;
 }
 
 .titlePane h2 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 28px;
+}
+
+.contentPane {
+  flex: 1;
 }

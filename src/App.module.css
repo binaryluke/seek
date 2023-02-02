@@ -1,12 +1,12 @@
 .header {
   background: white;
-  padding: 1.1em 1.4em;
+  padding: 18px 24px;
   box-sizing: border-box;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 1.6em;
+  font-size: 26px;
   font-weight: 700;
 }
 
@@ -15,19 +15,20 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  background: var(--color-neutral-2);
+  background: var(--color-accent-3);
 }
 
 .footer {
-  background: white;
-  padding: 1.1em 1.4em;
-  background: var(--color-neutral-1);
+  padding: 18px 24px;
+  background: var(--color-accent-2);
+  color: var(--color-dark-text);
   box-sizing: border-box;
 }
 
 .footer p {
   margin: 0;
-  font-size: 0.8em;
   text-align: center;
 }

@@ -1,25 +1,35 @@
 /* Site wide styles and resets */
-/* NOTE: Usually I would include some custom reset styles, but they will distract and bloat from the focus of this code test, so not including for this code test */
-/* NOTE: These days I prefer to start with css (modules) and then switch to a pre-processor like sass if and only if need more features, in large projects like Seek will usually require */
 
 :root {
-  /* Credit: Seek. Colors! (I just picked a few from the real seek site) */
-  --color-accent-1: #0d3880;
-  --color-accent-2: #0a2a60;
-  --color-accent-3: #2765cf;
-  --color-neutral-1: #f7f8fb;
-  --color-neutral-2: #f2f4f7;
-  --color-neutral-3: #e6ecf6;
+  /* Credit: https://www.canva.com/colors/color-palettes/middle-eastern-empire/ */
+  --color-accent-1: #922c40; /* rose red */
+  --color-accent-2: #dc9750; /* desert sun */
+  --color-accent-3: #f3eac0; /* champagne */
+  --color-accent-4: #1e2640; /* dark blue */
+
+  --color-greyscale-dark: #66676e;
+  --color-greyscale-light: #adaeb3;
+  --color-dark-text: #222;
 
   /* Lacking inspiration right now, using classic goto Roboto */
   --font-family: "Roboto", sans-serif;
 }
 
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
   font-family: var(--font-family);
 }
 
+html,
 body,
 #root {
   min-height: 100vh;
@@ -29,9 +39,4 @@ body,
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-}
-
-div,
-section {
-  box-sizing: border-box;
 }

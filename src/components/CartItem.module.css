@@ -1,3 +1,6 @@
 .CartItem {
-  background: var(--color-accent-3);
+  background-color: var(--color-accent-2);
+  border-radius: 8px;
+  padding: 24px 16px;
+  color: var(--color-dark-text);
 }

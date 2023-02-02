@@ -1,0 +1,53 @@
+.checkoutRoute {
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+.checkoutRoute ul {
+  margin: 46px 0 60px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.checkoutRoute li + li {
+  margin-top: 22px;
+}
+
+.confirmPane {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.total {
+  font-size: 32px;
+  color: var(--color-dark-text);
+}
+
+.total span {
+  font-weight: 700;
+}
+
+.purchaseBtn {
+  border: 0;
+  background: var(--color-accent-1);
+  padding: 20px 28px;
+  font-size: 20px;
+  color: white;
+}
+
+.purchaseBtn:hover {
+  cursor: pointer;
+}
+
+.purchaseBtn:disabled {
+  background: var(--color-greyscale-dark);
+  color: var(--color-greyscale-light);
+  cursor: not-allowed;
+}
+
+.purchaseBtn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
