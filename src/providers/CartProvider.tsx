@@ -11,14 +11,12 @@ import {
   CartProduct,
   CartResponse,
 } from "../server/mockServer";
+import { useCustomer } from "./AuthProvider";
 
 interface CartContext {
   totalPrice: number;
   cartProducts: CartProduct[];
   addToCart(productId: number): void;
-}
-interface CartProvider {
-  customerId: number;
 }
 
 const CartContext = createContext<CartContext>({
@@ -27,7 +25,8 @@ const CartContext = createContext<CartContext>({
   addToCart: () => {},
 });
 
-export const CartProvider = (props: PropsWithChildren<CartProvider>) => {
+export const CartProvider = (props: PropsWithChildren<{}>) => {
+  const { customerId } = useCustomer();
   const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [lastUpdateTime, setLastUpdateTime] = useState(0);
@@ -39,13 +38,13 @@ export const CartProvider = (props: PropsWithChildren<CartProvider>) => {
     }
   };
   const addToCart = (productId: number) =>
-    addToCartOnServer(props.customerId, productId).then(handleCartUpdate);
+    addToCartOnServer(customerId, productId).then(handleCartUpdate);
 
   useEffect(() => {
     setCartProducts([]);
     setTotalPrice(0);
-    getCartFromServer(props.customerId).then(handleCartUpdate);
-  }, [props.customerId]);
+    getCartFromServer(customerId).then(handleCartUpdate);
+  }, [customerId]);
 
   const value = { totalPrice, cartProducts, addToCart };
   return (

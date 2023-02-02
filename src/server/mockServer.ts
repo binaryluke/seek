@@ -83,3 +83,14 @@ export const emptyCart = async (customerId: number) => {
 export const emptyAllCarts = async () => {
   customerCheckoutMap = {};
 };
+
+export interface CustomerItem {
+  customerId: number;
+  customerName: string;
+}
+export const getCustomers = async (): Promise<CustomerItem[]> => {
+  return database.customers.map((customer) => ({
+    customerId: customer.id,
+    customerName: customer.name,
+  }));
+};

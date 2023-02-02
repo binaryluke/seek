@@ -1,4 +1,4 @@
-import { describe, expect, test, afterEach } from "@jest/globals";
+import { describe, expect, test, afterEach, jest } from "@jest/globals";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import {
   CartProvider,
@@ -6,7 +6,9 @@ import {
   useTotalPrice,
   useAddToCart,
 } from "./CartProvider";
+import { AuthProvider } from "./AuthProvider";
 import { emptyAllCarts } from "../server/mockServer";
+import { MemoryRouter } from "react-router-dom";
 
 const DEFAULT_USER_ID = 0;
 const SECONDBITE_USER_ID = 1;
@@ -35,11 +37,15 @@ const TestingComponent = () => {
   );
 };
 
-const renderWithCartProvider = (customerId: number) => {
+const renderWithProviders = (customerId: number) => {
   return render(
-    <CartProvider customerId={customerId}>
-      <TestingComponent />
-    </CartProvider>
+    <MemoryRouter initialEntries={[`?customerId=${customerId}`]}>
+      <AuthProvider>
+        <CartProvider>
+          <TestingComponent />
+        </CartProvider>
+      </AuthProvider>
+    </MemoryRouter>
   );
 };
 
@@ -49,7 +55,7 @@ afterEach(async () => {
 
 describe("CartProvider", () => {
   test("Defaults to  $0 total", async () => {
-    const { getByTestId } = renderWithCartProvider(DEFAULT_USER_ID);
+    const { getByTestId } = renderWithProviders(DEFAULT_USER_ID);
     const component = await waitFor(() => getByTestId("total"));
     const total = component.textContent;
 
@@ -57,7 +63,7 @@ describe("CartProvider", () => {
   });
 
   test("Example Scenario 1 (Default)", async () => {
-    const { getByTestId } = renderWithCartProvider(DEFAULT_USER_ID);
+    const { getByTestId } = renderWithProviders(DEFAULT_USER_ID);
     const addClassicBtn = await waitFor(() =>
       getByTestId(`product-${CLASSIC_PRODUCT_ID}`)
     );
@@ -78,7 +84,7 @@ describe("CartProvider", () => {
   });
 
   test("Example Scenario 2 (SecondBite)", async () => {
-    const { getByTestId } = renderWithCartProvider(SECONDBITE_USER_ID);
+    const { getByTestId } = renderWithProviders(SECONDBITE_USER_ID);
     const addClassicBtn = await waitFor(() =>
       getByTestId(`product-${CLASSIC_PRODUCT_ID}`)
     );
@@ -97,7 +103,7 @@ describe("CartProvider", () => {
   });
 
   test("Example Scenario 3 (Axil)", async () => {
-    const { getByTestId } = renderWithCartProvider(AXIL_USER_ID);
+    const { getByTestId } = renderWithProviders(AXIL_USER_ID);
     const addStandoutBtn = await waitFor(() =>
       getByTestId(`product-${STANDOUT_PRODUCT_ID}`)
     );
