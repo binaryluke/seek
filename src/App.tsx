@@ -19,6 +19,9 @@ export const App = () => {
       </main>
       <footer className={classes.footer}>
         <p>Code test for Seek by Luke Howard</p>
+        <p>
+          <a href="https://github.com/binaryluke/seek">View code on Github</a>
+        </p>
       </footer>
     </>
   );

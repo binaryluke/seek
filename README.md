@@ -13,4 +13,3 @@ View live demo at [https://lukehoward.name/seek](lukehoward.name/seek)
 # Run tests
 
 `yarn test`
-

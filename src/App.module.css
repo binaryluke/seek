@@ -39,3 +39,12 @@
   margin: 0;
   text-align: center;
 }
+
+.footer p + p {
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.footer span {
+  padding: 0 15px;
+}
