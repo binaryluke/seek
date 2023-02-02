@@ -1,4 +1,7 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: white;
   padding: 18px 24px;
   box-sizing: border-box;
@@ -12,6 +15,10 @@
 
 .header h1 > span {
   font-weight: 400;
+}
+
+.header p {
+  font-size: 20px;
 }
 
 .main {
