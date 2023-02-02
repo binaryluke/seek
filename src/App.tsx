@@ -12,7 +12,11 @@ export const App = () => {
         <h1>
           <Link to="/">Seek</Link> <span>| Luke Howard</span>
         </h1>
-        {isCheckoutRoute && <p>Welcome back, {customerName}</p>}
+        {isCheckoutRoute && (
+          <p>
+            Welcome back,<span> {customerName}</span>
+          </p>
+        )}
       </header>
       <main className={classes.main}>
         <Outlet />
