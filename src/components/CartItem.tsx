@@ -23,7 +23,6 @@ export const CartItem = (props: CartItemProps) => {
         <QtyControl qty={props.qty} incrementQty={props.incrementQty} />
         <p data-testid="cartItemPrice">${props.price / 100}</p>
       </div>
-      <div className={classes.actions}></div>
     </section>
   );
 };
