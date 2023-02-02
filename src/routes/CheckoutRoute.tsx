@@ -5,11 +5,13 @@ import {
   useAddToCart,
 } from "../providers/CartProvider";
 import { CartItem } from "../components/CartItem";
+import { useNavigate } from "react-router-dom";
 
 export const CheckoutRoute = () => {
   const cartProducts = useCartProducts();
   const totalPrice = useTotalPrice();
   const addToCart = useAddToCart();
+  const navigate = useNavigate();
 
   return (
     <Page title="Checkout">
@@ -26,12 +28,15 @@ export const CheckoutRoute = () => {
           </li>
         ))}
       </ul>
-      <p>
-        Total:{" "}
-        <span data-testid="checkoutTotalPrice">
-          ${totalPrice ? totalPrice / 100 : 0}
-        </span>
-      </p>
+      <div>
+        <p>
+          Total:{" "}
+          <span data-testid="checkoutTotalPrice">
+            ${totalPrice ? totalPrice / 100 : 0}
+          </span>
+        </p>
+        <button disabled={!totalPrice} onClick={() => navigate('/success')}>Purchase</button>
+        </div>
     </Page>
   );
 };
