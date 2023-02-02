@@ -35,8 +35,10 @@ export const CheckoutRoute = () => {
             ${totalPrice ? totalPrice / 100 : 0}
           </span>
         </p>
-        <button disabled={!totalPrice} onClick={() => navigate('/success')}>Purchase</button>
-        </div>
+        <button disabled={!totalPrice} onClick={() => navigate("/success")}>
+          Purchase
+        </button>
+      </div>
     </Page>
   );
 };
